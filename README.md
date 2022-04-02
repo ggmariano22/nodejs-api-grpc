@@ -7,8 +7,5 @@
 
 ## This is a gRPC API implementation with NodeJS for study.
 
-To start gRPC server just run the command below:
-- `node server.js`
-
-To start the API server just run the command below:
+To start the API server and gRPC server just run the command below:
 - `npm run start`
