@@ -17,11 +17,6 @@ const profileProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
 
-const data = [{
-	id: 1,
-	username: 'ggmariano22'
-}];
-
 server.addService(profileProto.ProfileService.service, {
   getProfile: async (_, callback) => {
 	const results = await fetch(`https://api.github.com/users/${_.request.id}`);
