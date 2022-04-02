@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_PATH=./src nodemon --exec babel-node src/index.js"
+    "start": "node server.js & cross-env NODE_PATH=./src nodemon --delay 500ms --exec babel-node src/index.js",
+    "grpc-start": "node server.js"
   },
   "keywords": [],
   "author": "",

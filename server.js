@@ -23,17 +23,10 @@ const data = [{
 }];
 
 server.addService(profileProto.ProfileService.service, {
-  getProfile: (_, callback) => {
-	fetch(`https://api.github.com/users/${_.request.id}`)
-	.then(response => {
-		response.json()
-		.then(profile => {
-			callback(null, {profile: profile});
-		});
-	})
-	.catch(error => {
-		throw error
-	});
+  getProfile: async (_, callback) => {
+	const results = await fetch(`https://api.github.com/users/${_.request.id}`);
+  const profile = await results.json();
+	callback(null, {profile: profile});
   },
 });
 
