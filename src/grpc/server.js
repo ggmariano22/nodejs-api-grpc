@@ -1,8 +1,13 @@
 import grpc from '@grpc/grpc-js';
 import protoLoader from '@grpc/proto-loader';
 import fetch from "node-fetch";
+import { join, dirname } from 'path';
+import {fileURLToPath} from 'url';
 
-const PROTO_PATH = './github.proto';
+/* const PROTO_PATH = './github.proto'; */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const PROTO_PATH = join(__dirname, '/github.proto');
 
 const options = {
   keepCase: true,
